@@ -1,4 +1,4 @@
-interface PolarPoint {
+interface PolarPoint extends Point {
     len: number,
     angle: number,
     computeX: () => number
@@ -16,6 +16,14 @@ function newPolarPoint (len: number, angle: number): PolarPoint {
 
         computeY: function (): number {
             return Math.round(len * Math.sin(angle))
+        },
+
+        getX: function () : number {
+            return this.computeX();
+        },
+
+        getY: function () : number {
+            return this.computeY();
         }
     }
 }
